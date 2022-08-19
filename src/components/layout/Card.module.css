@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 300px;
+    padding: 1em;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.500);
+}
+
+.add_button {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1.3em;
+}
+
+.add_button button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    width: 80px;
+    height: 80px;
+    border: 2px dashed #836FFF;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: transparent;
+    color: #836FFF;
+    transition: 0.3s;
+}
+
+.add_button button:hover {
+    background-color: #cdc5ff;
+    color: #6253bf;
+    border-color: #6253bf;
+}
+
+.add_legend {
+    font-size: 1.5em;
+    text-align: center;
+}

@@ -1,0 +1,67 @@
+.main_container {
+    width: 100%;
+    min-height: 100%;
+    padding: 3em 5em;
+    background-color: #7664e6;
+}
+
+/* Container das Notas */
+.notes_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    min-height: 440px;
+    margin-top: 1em;
+    padding: 1em 2em 1.5em;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.600);
+}
+
+/* Barra do título */
+.top_bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1em;
+    /* background-color: dodgerblue; */
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo span {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-left: 0.5em;
+    color: rgb(68, 68, 68);
+}
+
+.top_bar .logo img {
+    width: 32px;
+    height: 32px;
+}
+
+.top_bar button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: rgb(107, 107, 107);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.top_bar button:hover {
+    background-color: rgba(0, 0, 0, 0.100);
+    color: rgba(0, 0, 0, 0.500);
+}
