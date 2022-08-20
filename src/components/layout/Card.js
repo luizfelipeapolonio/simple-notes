@@ -2,11 +2,11 @@ import styles from './Card.module.css';
 
 import { FaPlus } from 'react-icons/fa';
 
-function Card() {
+function Card({ handleOpenModal }) {
     return (
         <div className={styles.container}>
             <div className={styles.add_button}>
-                <button>
+                <button onClick={handleOpenModal}>
                     <FaPlus />
                 </button>
             </div>

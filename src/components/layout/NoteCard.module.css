@@ -5,18 +5,19 @@
     height: 300px;
     padding: 1em 1em 0.3em;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.500);
+    background-color: rgba(255, 255, 255, 0.600);
 }
 
 .container h3 {
+    color: #4f4399;
     margin-bottom: 0.5em;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #836FFF;
 }
 
 .note_content {
     overflow: auto;
     margin-bottom: 0.5em;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #836FFF;
     padding-bottom: 0.5em;
 }
 

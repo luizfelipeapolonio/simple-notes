@@ -1,0 +1,23 @@
+.form_textarea {
+    display: flex;
+    flex-direction: column;
+    /* background: dodgerblue;  */
+}
+
+.form_textarea label {
+    color: #4f4399;
+    font-size: 1em;
+    font-weight: 600;
+    margin: 1em 0 0.4em;
+}
+
+.form_textarea textarea {
+    width: 100%;
+    font-size: 1em;
+    font-weight: 500;
+    outline: none;
+    resize: none;
+    padding: 0.5em;
+    border: 1px solid #836FFF;
+    border-radius: 5px;
+}

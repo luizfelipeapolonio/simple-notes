@@ -1,0 +1,22 @@
+.form_input {
+    display: flex;
+    flex-direction: column;
+    /* background: dodgerblue; */
+}
+
+.form_input label {
+    color: #4f4399;
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0.8em 0 0.4em;
+}
+
+.form_input input {
+    width: 100%;
+    font-size: 1em;
+    font-weight: 500;
+    outline: none;
+    padding: 0.5em;
+    border: 1px solid #836FFF;
+    border-radius: 5px;
+}

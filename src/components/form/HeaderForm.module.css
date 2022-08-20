@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #4f4399;
+    /* background-color: greenyellow; */
+}
+
+.header h3 {
+    color: #4f4399;
+}
+
+.header button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    background-color: transparent;
+    color: rgba(159, 4, 4, 0.6);
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.header button:hover {
+    background-color: rgba(247, 5, 5, 0.150);
+    color: rgb(197, 4, 4);
+}
