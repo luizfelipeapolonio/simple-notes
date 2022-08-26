@@ -7,18 +7,13 @@ import styles from './ModalForm.module.css';
 
 import { useState } from 'react';
 
-function ModalForm({ stateModal, outsideClick, handleSubmit  }) {
-
-    const [notes, setNotes] = useState();
+function ModalForm({ stateModal, outsideClick, handleSubmit }) {
 
     const date = new Date();
-    const options = {
-        day: 'numeric', 
-        month: 'long', 
-        year: 'numeric',
-    }
-    const fullDate = date.toLocaleString('default', options);
-    const finalDate = fullDate.replaceAll(' de', ',');
+    const fullDate = date.toLocaleDateString();
+
+    const [notes, setNotes] = useState({datenote: fullDate});
+
 
     // Getting the values of inputs and setting the notes State
     const handleChange = (e) => {
@@ -28,9 +23,8 @@ function ModalForm({ stateModal, outsideClick, handleSubmit  }) {
     // Submit the notes by the prop handleSubmit as a function
     const submit = (e) => {
         e.preventDefault();
-
+        
         handleSubmit(notes);
-        console.log(finalDate);
     }
 
     return (

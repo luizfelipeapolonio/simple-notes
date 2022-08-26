@@ -13,7 +13,7 @@ function NoteCard({ title, content, date }) {
             </div>
             <div className={styles.note_buttons}>
                 <div className={styles.date}>
-                    <p>25, Agosto, 2022</p>
+                    <p>{date}</p>
                 </div>
                 <div>
                     <button className={styles.btn_edit}>

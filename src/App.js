@@ -88,6 +88,7 @@ function App() {
             key={note.id}
             title={note.title}
             content={note.description}
+            date={note.datenote}
           />
         ))
       )}
