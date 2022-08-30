@@ -2,7 +2,7 @@ import logo from '../../img/nota_logo.png';
 
 import styles from './Container.module.css';
 
-import { FaEllipsisV } from 'react-icons/fa';
+//import { FaEllipsisV } from 'react-icons/fa';
 
 function Container({ children }) {
     return (
@@ -12,9 +12,9 @@ function Container({ children }) {
                     <div className={styles.logo}>
                         <img src={logo} alt="Logo"/><span>Simple Notes</span>
                     </div>
-                    <button>
+                    {/* <button>
                         <FaEllipsisV />
-                    </button>
+                    </button> */}
                 </div>
                 {children}
             </div>

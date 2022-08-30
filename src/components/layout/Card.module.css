@@ -43,3 +43,23 @@
     font-size: 1.5em;
     text-align: center;
 }
+
+/* Responsive layout - Media Queries */
+@media screen and (max-width: 1350px) {
+    .container {
+        width: 32%;
+    }
+}
+
+@media screen and (max-width: 985px) {
+    .container {
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+}

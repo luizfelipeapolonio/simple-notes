@@ -24,7 +24,7 @@ function EditModalForm({ stateModal, outsideClick, handleSubmit, edit }) {
     // when there are changes in the inputs value
     useEffect(() => {
         setNotes({...notes, title, description});
-    }, [title, description])
+    }, [title, description]);
 
     // Getting the values of inputs and setting the notes State
     const handleTitle = (e) => {

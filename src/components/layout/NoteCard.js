@@ -9,6 +9,7 @@ function NoteCard({ id, title, content, date, handleRemove, handleEdit }) {
         handleRemove(id);
     }
 
+    // Calls edit modal with the note to edit
     const edit = () => {
         handleEdit(id);
     }

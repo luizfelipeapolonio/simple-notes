@@ -47,3 +47,12 @@
         transform: translateY(0px);
     }
 }
+
+
+/* Responsive layout - Media Query */
+@media screen and (max-width: 900px) {
+    .container_form {
+        min-width: 50%;
+        margin: 0 auto;
+    }
+}

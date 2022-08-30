@@ -14,3 +14,10 @@
 .add_button:hover {
     background-color: #6253bf;
 }
+
+/* Responsive layout - Media Query */
+@media screen and (max-width: 683px) {
+    .add_button {
+        font-size: 0.8em;
+    }
+}
