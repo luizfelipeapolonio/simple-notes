@@ -1,14 +1,17 @@
 import Container from './components/layout/Container';
 import Card from './components/layout/Card';
 import NoteCard from './components/layout/NoteCard';
-import ModalForm from './components/project/ModalForm';
+import ModalForm from './components/modal/ModalForm';
+import EditModalForm from './components/modal/EditModalForm';
 
 import { useState, useEffect } from 'react';
 
 function App() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [notes, setNotes] = useState([]);
+  const [noteToEdit, setNoteToEdit] = useState();
 
   // Loading of notes when the page is up
   useEffect(() => {
@@ -48,16 +51,88 @@ function App() {
     })
   }
 
+  // Remove note from database and update notes array State
+  // after fulfilled response
+  const removeNote = (id) => {
+    fetch(`http://localhost:5000/notes/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json',
+      },
+    })
+    .then((resp) => resp.json())
+    .then(() => {
+      // State update function
+      updateState(id);
+    })
+    .catch((err) => {
+      console.log(`Ocorreu um erro: ${err}`);
+    })
+  }
+
+  // Update notes array State after removing it
+  const updateState = (id) => {
+    let remove = notes.filter((note) => {
+      return note.id !== id
+    });
+
+    setNotes(remove);
+  }
+
   
- /* const addNote = (note) => {
-    const newNote = [...notes, note];
-    setNotes(newNote);
+  // Edit and update the note
+  const submitEditedNote = (editedNote) => {
+    fetch(`http://localhost:5000/notes/${editedNote.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(editedNote),
+    })
+    .then((resp) => resp.json())
+    .then((data) => {
+      let update = notes.filter((note) => {
+        return note.id !== data.id
+      });
+      
+      let newArray = [data, ...update];
 
-    setIsModalOpen(false);
-    
-    console.log(newNote);
-  } */
+      setNotes(newArray);
+      setIsEditModalOpen(false);
+    })
+    .catch((err) => {
+      console.log(`Ocorreu um erro: ${err}`);
+    })
+  }
 
+  // Get the note data to edit
+  const editNote = (id) => {
+    let note = notes.filter((note) => {
+        return note.id === id
+    });
+
+    setIsEditModalOpen(true);
+    setNoteToEdit(note);
+    console.log(note);
+  }
+
+  // Edit Modal
+  // Close Edit Modal by clicking the X button
+  const closeEditModal = (e) => {
+    e.preventDefault();
+
+    setIsEditModalOpen(false);
+  }
+
+  // Close Modal by clicking outside of it
+  const handleEditOutsideClick = (e) => {
+    if(e.target.id === "modal"){
+        setIsEditModalOpen(false);
+      }
+  }
+
+
+  // Add Modal
   // Close Modal by clicking the X button
   const closeModal = (e) => {
     e.preventDefault();
@@ -82,13 +157,24 @@ function App() {
           handleSubmit={createNote}
         />
       )}
+      {isEditModalOpen && (
+        <EditModalForm 
+          stateModal={closeEditModal} 
+          outsideClick={handleEditOutsideClick}
+          handleSubmit={submitEditedNote}
+          edit={noteToEdit}
+      />
+      )}
       {notes && (
         notes.map((note) => (
-          <NoteCard 
+          <NoteCard
+            id={note.id} 
             key={note.id}
             title={note.title}
             content={note.description}
             date={note.datenote}
+            handleRemove={removeNote}
+            handleEdit={editNote}
           />
         ))
       )}

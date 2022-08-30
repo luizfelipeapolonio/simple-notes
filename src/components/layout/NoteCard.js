@@ -2,7 +2,17 @@ import styles from './NoteCard.module.css';
 
 import { FaPen, FaTrash } from 'react-icons/fa';
 
-function NoteCard({ title, content, date }) {
+function NoteCard({ id, title, content, date, handleRemove, handleEdit }) {
+
+    // Remove notecard
+    const remove = () => {
+        handleRemove(id);
+    }
+
+    const edit = () => {
+        handleEdit(id);
+    }
+
     return (
         <div className={styles.container}>
             <h3>{title}</h3>
@@ -16,10 +26,16 @@ function NoteCard({ title, content, date }) {
                     <p>{date}</p>
                 </div>
                 <div>
-                    <button className={styles.btn_edit}>
+                    <button 
+                        className={styles.btn_edit} 
+                        onClick={edit}
+                    >
                         <FaPen />
                     </button>
-                    <button className={styles.btn_delete}>
+                    <button 
+                        className={styles.btn_delete} 
+                        onClick={remove}
+                    >
                         <FaTrash />
                     </button>
                 </div>

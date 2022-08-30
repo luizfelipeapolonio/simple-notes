@@ -12,6 +12,7 @@
 .container h3 {
     font-size: 1.1em;
     color: #4f4399;
+    min-height: 1.1em;
     margin-bottom: 0.5em;
     border-bottom: 1px solid #836FFF;
     overflow: auto;

@@ -9,11 +9,11 @@ import { useState } from 'react';
 
 function ModalForm({ stateModal, outsideClick, handleSubmit }) {
 
+    // Getting date
     const date = new Date();
     const fullDate = date.toLocaleDateString();
 
     const [notes, setNotes] = useState({datenote: fullDate});
-
 
     // Getting the values of inputs and setting the notes State
     const handleChange = (e) => {
