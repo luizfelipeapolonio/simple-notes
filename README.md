@@ -1,3 +1,10 @@
+# Aplicativo de Notas
+
+Aplicativo de notas simples com dados persistentes utilizando a biblioteca React JS. Para armazenar os dados, foi utilizado a biblioteca json server, simulando uma REST API.
+
+<img src="./gif/simple_notesGIF.gif" alt="Gif demonstração do projeto" />
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
