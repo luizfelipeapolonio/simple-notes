@@ -23,7 +23,7 @@ function EditModalForm({ stateModal, outsideClick, handleSubmit, edit }) {
     // Fill notes array when the modal is up and
     // when there are changes in the inputs value
     useEffect(() => {
-        setNotes({...notes, title, description});
+        setNotes((currentNote) => ({...currentNote, title, description}));
     }, [title, description]);
 
     // Getting the values of inputs and setting the notes State
